@@ -12,12 +12,21 @@
 
 % colors
 \usepackage{xcolor}
+\usepackage{graphicx}
 
 % Document
 \begin{document}
     
     \begin{tikzpicture}[scale=2]
         \draw[lightgray] (0, 0) grid (5, 5);
+    \end{tikzpicture}
+    
+    \begin{tikzpicture}[scale=2]
+        \draw[lightgray] (0, 0) grid (5, 5);
+
+        \coordinate (A) at (3, 3);
+
+        \draw[-Circle] (A) arc(30:90:2);
     \end{tikzpicture}
 
 \end{document}
