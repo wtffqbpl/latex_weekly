@@ -18,7 +18,7 @@ macro(compile_latex _meta_target _source)
     add_dependencies(${_meta_target} ${_target})
 endmacro()
 
-set(latex_sources ${CMAKE_SOURCE_DIR}/lec_01.tex)
+file(GLOB_RECURSE latex_sources *.tex)
 
 set(meta_target latex_compile)
 add_custom_target(${meta_target} ALL)
