@@ -1,0 +1,36 @@
+%! Author = yuanjunren
+%! Date = 12/8/23
+
+% Preamble
+\documentclass[11pt]{article}
+
+% tikzpicture
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta}
+
+% Document
+\begin{document}
+
+    \begin{tikzpicture}[scale=2]
+        \coordinate (C1) at (0, 0);
+        \coordinate (C2) at (1.5, 0);
+        \coordinate (C3) at (0.75, -1.5);
+        \coordinate (R1) at (-1.75, -3.25);
+        \coordinate (R2) at (3.25, 1.75);
+
+        \draw (C1) circle (1.25);
+        \draw (C2) circle (1.25);
+        \draw (C3) circle (1.25);
+
+        \draw (R1) rectangle (R2);
+
+        \coordinate [label=left:$\xi$] (R) at (-1.75, 1.5);
+        \coordinate [label=above left:\textbf{Rugby}] (A) at (-0.5, 1.1);
+        \coordinate [label=above right:\bf{Football}] (B) at (1.8, 1.2);
+        \coordinate [label=below:\bf{Cricket}] (C) at (0.75, -2.8);
+
+    \end{tikzpicture}
+
+
+
+\end{document}

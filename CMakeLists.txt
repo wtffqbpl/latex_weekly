@@ -3,13 +3,13 @@ cmake_minimum_required(VERSION 3.22)
 project(latex-weekly)
 
 set(PDFLATEX_COMPILER /Library/TeX/texbin/pdflatex)
-set(CMAKE_INSTALL_NAME_DIR ${CMAKE_SOURCE_DIR}/out)
+set(CMAKE_INSTALL_NAME_DIR ${CMAKE_SOURCE_DIR}/pdfs)
 
 macro(compile_latex _meta_target _source)
     get_filename_component(_name ${_source} NAME_WE)
     set(_target ${_name}_compile)
     add_custom_target(${_target}
-      COMMAND ${PDFLATEX_COMPILER} ${_source}
+      COMMAND ${PDFLATEX_COMPILER} ${_source} > ${CMAKE_CURRENT_BINARY_DIR}/${_name}.tmp.log
       WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR})
 
     install(FILES ${CMAKE_CURRENT_BINARY_DIR}/${_name}.pdf
