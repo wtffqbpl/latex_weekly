@@ -10,6 +10,8 @@ macro(compile_latex _meta_target _source)
     set(_target ${_name}_compile)
     add_custom_target(${_target}
       COMMAND ${PDFLATEX_COMPILER} ${_source} > ${CMAKE_CURRENT_BINARY_DIR}/${_name}.tmp.log
+      BYPRODUCTS ${CMAKE_CURRENT_BINARY_DIR}/${_name}.pdf
+      SOURCES ${_source}
       WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR})
 
     install(FILES ${CMAKE_CURRENT_BINARY_DIR}/${_name}.pdf
